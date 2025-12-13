@@ -1,0 +1,56 @@
+===========================================================================================
+Dokumentasi Error
+Tugas 3
+===========================================================================================
+
+1. KETERANGAN ERROR (Syntax PHP)
+
+File        : proses-pendaftaran-2.php
+Baris (Est) : 12
+Pesan Error : Parse error: syntax error, unexpected token "=", expecting end of file (atau pesan serupa terkait assignment).
+Jenis Error : Syntax Error
+Penyebab    : Variabel ditulis tanpa tanda dolar ($). Tertulis sekolah = ... seharusnya $sekolah = ....
+Perbaikan   : Tambahkan tanda $ di depan nama variabel menjadi:
+  
+$sekolah = $_POST['sekolah_asal'];
+
+===========================================================================================
+
+2. KETERANGAN ERROR (Konfigurasi Database - Nama DB)
+
+File        : koneksi.php
+Baris (Est) : 7
+Pesan Error : Warning: mysqli_connect(): (HY000/1049): Unknown database 'pendaftaran_siswa'
+Jenis Error : Runtime Error / Logic Error
+Penyebab    : Di file koneksi.php, variabel $nama_database diisi "pendaftaran_siswa". Namun, file SQL yang berikan (calon_siswa.sql)
+Perbaikan   : ubah baris 7 menjadi:
+
+$nama_database = "calon_siswa";
+
+===========================================================================================
+
+3. KETERANGAN ERROR (Konfigurasi Database - Password)
+
+File        : koneksi.php
+Baris (Est) : 6
+Pesan Error : Warning: mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES)
+Jenis Error : Runtime Error (Authentication)
+Penyebab    : Di XAMPP, secara default user root memiliki password kosong (""). Di kode tertulis $password = "12345"
+Perbaikan   : Mengkosongkan password:
+
+$password = "";
+
+===========================================================================================
+
+4. KETERANGAN ERROR (Struktur HTML)
+
+File        : Form-daftar.php
+Baris (Est) : 1
+Pesan Error : Tidak muncul error di layar (silent error), namun browser akan merender dalam Quirks Mode.
+Jenis Error : HTML Syntax Error
+Penyebab    : Penulisan deklarasi DOCTYPE salah. Tertulis <DOCTYPE >.
+Perbaikan   : Ubah menjadi format HTML5 yang valid:
+
+<!DOCTYPE html>
+
+===========================================================================================
